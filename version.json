@@ -1,0 +1,10 @@
+{
+  "product": "BUV AI Evaluation Dashboard",
+  "version": "2.0.0",
+  "release": "Live-ready local controlled release",
+  "built": "2026-10-22",
+  "solution_design_build_deployment_implementation": "Omar",
+  "runtime": "Python standard library; Excel OOXML backend; local browser UI",
+  "deployment_scope": "Single-user local decision-support package; central multi-user deployment requires a managed shared service/database",
+  "governance_authority_note": "Bundled BUV governance sources are final drafts pending formal institutional approval."
+}

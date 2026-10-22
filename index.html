@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>BUV AI Evaluation Dashboard</title>
+  <link rel="icon" type="image/jpeg" href="assets/buv_ict_header.jpg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <div class="topbar-brand">
+      <img src="assets/buv_ict_header.jpg" alt="British University Vietnam">
+      <div>
+        <div class="product-kicker">British University Vietnam</div>
+        <h1>AI Evaluation Dashboard</h1>
+        <p>Action-first governance decision support</p>
+      </div>
+    </div>
+    <div class="release-chip"><span class="live-dot"></span><span id="appVersion">v2.0.0</span> · Local</div>
+  </header>
+
+  <aside class="sidebar">
+    <nav class="nav" aria-label="Main navigation">
+      <button data-view="overview" class="active"><span>▦</span> Overview</button>
+      <button data-view="register"><span>≡</span> AI Services Register</button>
+      <button data-view="evaluate"><span>✓</span> Guided Evaluation</button>
+      <button data-view="documents"><span>▤</span> Policy & Guidance</button>
+    </nav>
+    <div class="side-card">
+      <b>One question first</b>
+      <p><strong>What may we do now?</strong></p>
+      <span>The platform gives the operational action first, then the supporting governance colour, evidence and reviews.</span>
+    </div>
+    <div class="side-foot">Designed, built, deployed and implemented by Omar · 2026</div>
+  </aside>
+
+  <main class="main-content">
+    <div id="governanceBanner" class="governance-banner"></div>
+
+    <section id="view-overview" class="view active">
+      <div class="page-head">
+        <div><div class="eyebrow">AI governance workspace</div><h2>Committee overview</h2><p>See the next action, open evidence and lifecycle status without treating a colour as approval.</p></div>
+        <div class="actions"><button class="btn" id="refreshOverview">↻ Refresh Excel</button><button class="btn primary" data-go="evaluate">＋ Start guided evaluation</button></div>
+      </div>
+      <div class="status-line"><span class="dot" id="backendDot"></span><span id="backendStatus">Connecting to Excel backend…</span></div>
+      <div class="kpis" id="kpiGrid"></div>
+
+      <div class="grid dashboard-primary">
+        <div class="card">
+          <div class="card-head"><div><h3>What needs action</h3><div class="card-sub">Open evaluations with the next required Blueprint step</div></div><button class="btn small" data-go="register">View register</button></div>
+          <div id="queueTable"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div><h3>Operational lanes</h3><div class="card-sub">Primary answer: what may happen now?</div></div></div>
+          <div id="laneBars" class="bar-list"></div>
+          <div class="notice compact"><b>Action first.</b> Routine assured use, Safe Exploration, formal assessment, research confidentiality or information required.</div>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:16px">
+        <div class="card"><div class="card-head"><div><h3>Needs attention</h3><div class="card-sub">Critical findings, specialist reviews, review dates or assessment-target escalation</div></div></div><div id="attentionList" class="attention"></div></div>
+        <div class="card"><div class="card-head"><div><h3>Register status</h3><div class="card-sub">Institutional lifecycle state</div></div></div><div id="statusBars" class="bar-list"></div></div>
+      </div>
+
+      <div class="section-title"><div><h3>Colour guide — supporting context</h3><p>Use the colour to understand governance intensity, never as a standalone approval label.</p></div></div>
+      <div class="traffic-legend">
+        <div class="traffic-card green"><b>GREEN</b><span><strong>Example:</strong> summarise published papers for lesson preparation; no personal/confidential data, no material decision.</span></div>
+        <div class="traffic-card amber"><b>AMBER</b><span><strong>Example:</strong> an assured enterprise service summarises internal notes; a person independently reviews the output.</span></div>
+        <div class="traffic-card red"><b>RED</b><span><strong>Example:</strong> AI ranks students for progression risk, processes sensitive data, or can take consequential actions.</span></div>
+        <div class="traffic-card purple"><b>RESEARCH CONFIDENTIALITY</b><span><strong>Example:</strong> unpublished manuscript or patent work in an appropriately assured research environment.</span></div>
+      </div>
+    </section>
+
+    <section id="view-register" class="view">
+      <div class="page-head"><div><div class="eyebrow">Institutional lifecycle record</div><h2>BUV AI Services Register</h2><p>Each row is one assessed service + account/tenant + purpose + users + data + integration scope.</p></div><div class="actions"><a class="btn" href="/api/backend/download">⇩ Download backend</a><button class="btn primary" data-go="evaluate">＋ Start evaluation</button></div></div>
+      <div class="filters"><div class="search"><input id="registerSearch" placeholder="Search service, provider, unit, owner or Evaluation ID"></div><select id="filterStatus"><option value="">All statuses</option></select><select id="filterPath"><option value="">All routes</option></select></div>
+      <div id="registerTable"></div>
+    </section>
+
+    <section id="view-evaluate" class="view">
+      <div class="page-head compact-head">
+        <div><div class="eyebrow">Guided Evaluation Blueprint</div><h2 id="evaluationTitle">New AI service / use-case evaluation</h2><p>Answer one page at a time. The platform routes the case, narrows the evidence, identifies required reviewers and records the authorised decision.</p></div>
+        <div class="actions"><button class="btn" id="resumeSuggested">Go to next required step</button><button class="btn" id="resetEvaluation">New blank evaluation</button><button class="btn" data-go="register">Back to register</button></div>
+      </div>
+
+      <div class="wizard-stepper-wrap"><div class="wizard-stepper" id="wizardStepper"></div></div>
+      <div class="wizard-layout">
+        <div class="wizard-main">
+          <div class="wizard-page" id="wizardPage"></div>
+          <div class="wizard-nav">
+            <button class="btn" id="wizardBack">← Back</button>
+            <div class="wizard-nav-center"><span id="wizardSaveState">Draft not yet saved</span></div>
+            <div class="actions"><button class="btn" id="wizardSaveDraft">Save draft</button><button class="btn primary" id="wizardNext">Next →</button></div>
+          </div>
+        </div>
+
+        <aside class="wizard-aside">
+          <div class="aside-card sticky-preview">
+            <div class="aside-title">What may I do now?</div>
+            <div class="action-outcome"><span>Operational lane</span><div id="routeLane">INFORMATION REQUIRED</div></div>
+            <div class="action-line may"><span>May</span><p id="routeMay">Complete the scope facts.</p></div>
+            <div class="action-line stop"><span>Stop / do not</span><p id="routeStop">Do not infer approval from incomplete information.</p></div>
+            <div class="action-line next"><span>Next</span><p id="routeNextAction">Complete the current Blueprint step.</p></div>
+            <div class="aside-divider"></div>
+            <div class="mini-metric"><span>Evaluation ID</span><b id="routeEvalId">New / unsaved</b></div>
+            <div class="mini-metric"><span>Governance route</span><div id="routePath">UNDETERMINED</div></div>
+            <div class="mini-metric"><span>Policy assurance</span><div id="routePolicy">INFORMATION REQUIRED</div></div>
+            <div class="mini-metric"><span>Required evidence</span><b id="routeProgress">0%</b></div>
+            <div class="mini-metric"><span>Readiness</span><b id="routeReadiness">Draft</b></div>
+            <div class="assurance-meta vertical"><span id="safeExplorationFlag">Safe Exploration: information required</span><span id="assessmentTargetFlag">15-working-day target: complete request date not recorded</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="view-documents" class="view">
+      <div class="page-head"><div><div class="eyebrow">Controlled sources & diagnostics</div><h2>Policy, guidance and system evidence</h2><p>Current BUV source drafts, decision-support documentation and technical diagnostics are kept separate and visible.</p></div><div class="actions"><a class="btn" href="/api/diagnostics">⇩ Diagnostics ZIP</a><a class="btn" href="/api/backend/download">⇩ Excel backend</a></div></div>
+      <div class="docs">
+        <article class="doc-card current"><div class="doc-type">Current governance source</div><h3>BUV AI Usage Guideline v3.0</h3><p>Staff-facing routes, Safe Exploration, AI Services Register, research confidentiality and practical workflows.</p><div class="doc-actions"><a class="btn small primary" href="documents/BUV_AI_Usage_Guideline_v3.0.docx">Open local copy</a></div></article>
+        <article class="doc-card current"><div class="doc-type">Current governance source</div><h3>BUV ICT AI Technology Use Policy 2026</h3><p>Institutional technology controls, decision rights, high-impact use, integration, supplier and lifecycle governance.</p><div class="doc-actions"><a class="btn small primary" href="documents/BUV_ICT_AI_Technology_Use_Policy_2026.docx">Open local copy</a></div></article>
+        <article class="doc-card"><div class="doc-type">System documentation</div><h3>Governance Design Basis</h3><p>Explains what the platform automates, what remains a human decision, key source corrections and external benchmark basis.</p><div class="doc-actions"><a class="btn small" href="docs/GOVERNANCE_DESIGN_BASIS.md">Open design basis</a></div></article>
+        <article class="doc-card"><div class="doc-type">System documentation</div><h3>Test & Go-Live Evidence</h3><p>Release tests, limitations, deployment checks, troubleshooting and lifecycle notes.</p><div class="doc-actions"><a class="btn small" href="docs/TEST_REPORT.md">Test report</a><a class="btn small" href="docs/GO_LIVE_CHECKLIST.md">Go-live checklist</a></div></article>
+      </div>
+      <div class="notice source-note"><b>Authority note:</b> the bundled v3 Guideline and 2026 ICT Policy are source drafts pending formal BUV approval. This software does not make them approved policy and does not replace Legal, Privacy, Academic, Research/Ethics, Procurement or delegated risk authority.</div>
+      <div class="blueprint-summary"><b>10-step Blueprint</b><span>Use case → Context → Data & impact → Integration/autonomy → <strong>Action & route</strong> → Proportionate evidence → Triggered reviews → Delegated decision → Register status → Review/reassessment</span></div>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

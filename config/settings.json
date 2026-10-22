@@ -1,0 +1,25 @@
+{
+  "application": {
+    "name": "BUV AI Evaluation Dashboard",
+    "version": "2.0.0",
+    "release_label": "Live-ready local controlled release — governance sources pending formal BUV approval",
+    "designed_by": "Omar",
+    "year": 2026
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8765,
+    "max_request_bytes": 1048576
+  },
+  "backup": {
+    "retain": 20
+  },
+  "logging": {
+    "max_bytes": 2097152,
+    "backup_count": 5
+  },
+  "assessment": {
+    "target_working_days": 15,
+    "review_due_days": 30
+  }
+}

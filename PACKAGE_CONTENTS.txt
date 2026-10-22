@@ -1,0 +1,42 @@
+BUV AI Evaluation Dashboard v2.0.0
+Package contents
+
+CHANGELOG.md	1142 bytes
+CORE_CHECKSUMS_SHA256.txt	3230 bytes
+NOTICE.txt	564 bytes
+PACKAGE_CONTENTS.txt	1588 bytes
+README_FIRST.txt	2661 bytes
+RELEASE_NOTES_v2.0.0.txt	2776 bytes
+RUN_BUV_AI_DASHBOARD.bat	991 bytes
+THIRD_PARTY_NOTICES.txt	616 bytes
+app.js	43213 bytes
+app.py	71994 bytes
+assets/buv_ict_header.jpg	203448 bytes
+config/governance_sources.json	912 bytes
+config/holidays.json	185 bytes
+config/settings.json	528 bytes
+data/BUV_AI_Evaluation_Backend.xlsx	485273 bytes
+data/backups/README.txt	100 bytes
+docs/ARCHITECTURE.md	1509 bytes
+docs/GOVERNANCE_DESIGN_BASIS.md	6989 bytes
+docs/GO_LIVE_CHECKLIST.md	1781 bytes
+docs/README_SYSTEM.md	1824 bytes
+docs/TEST_REPORT.md	6379 bytes
+docs/TROUBLESHOOTING.md	1162 bytes
+documents/BUV_AI_Usage_Guideline_v3.0.docx	59605 bytes
+documents/BUV_ICT_AI_Technology_Use_Policy_2026.docx	266059 bytes
+documents/archive/BUV_AI_Usage_Guideline_V2.1_Amended.docx	68143 bytes
+documents/archive/ICT-FRM-001_AI_Evaluation_v1.1_Amended.xlsx	22707 bytes
+documents/archive/ICT-GUI-002-AI-Usage_Guidance_v1.1_Amended.docx	246703 bytes
+documents/archive/Legacy_ICT-FRM-001_AI_Evaluation_v1.1.xlsx	22707 bytes
+documents/archive/README_SUPERSEDED.txt	596 bytes
+documents/current/BUV_AI_Usage_Guideline_v3.0.docx	59605 bytes
+documents/current/BUV_ICT_AI_Technology_Use_Policy_2026.docx	266059 bytes
+index.html	11100 bytes
+logs/README.txt	482 bytes
+logs/audit.jsonl	0 bytes
+logs/system.log	0 bytes
+styles.css	36261 bytes
+tools/BOOTSTRAP_AND_RUN.ps1	9016 bytes
+version.json	549 bytes
+xlsx_store.py	13063 bytes

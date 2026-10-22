@@ -1,0 +1,17 @@
+{
+  "status": "DRAFT_GOVERNANCE_SOURCES",
+  "banner": "Governance source note: the bundled BUV AI Usage Guideline v3.0 and ICT AI Technology Use Policy 2026 are final drafts pending formal BUV approval. The software is live-ready decision support; it does not make those drafts approved policy.",
+  "sources": [
+    {
+      "name": "BUV AI Usage Guideline v3.0",
+      "status": "Final Draft for Committee Approval",
+      "effective": "On formal approval through BUV's authorised institutional governance process"
+    },
+    {
+      "name": "BUV ICT AI Technology Use Policy 2026",
+      "status": "Final uplifted draft for institutional review and approval",
+      "effective": "On formal approval"
+    }
+  ],
+  "legacy_note": "V2.1 Safe Harbor/default-approval logic and the legacy ICT-FRM-001 numeric decision model are retained only as historical references and are not used by the v2.0 decision engine."
+}

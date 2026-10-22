@@ -1,0 +1,38 @@
+BUV AI EVALUATION DASHBOARD v2.0.0
+LIVE-READY LOCAL CONTROLLED RELEASE
+Release date: 22 October 2026
+
+PURPOSE
+A local, one-user-at-a-time BUV decision-support platform for proportionate AI evaluation, evidence capture, specialist routing, lifecycle decisions and review tracking.
+
+KEY RELEASE PRINCIPLES
+- Action first: the dashboard explains what may happen now before presenting the colour route.
+- GREEN / AMBER / RED / RESEARCH CONFIDENTIALITY are governance routes, not institutional approval labels.
+- Safe Exploration is not production approval.
+- Missed assessment targets create escalation, never automatic approval.
+- Masking/pseudonymisation is not automatically anonymisation.
+- ICT technical assurance is separate from academic, privacy/legal, research/ethics, procurement and delegated institutional decisions.
+- Existing BUV-assured services used within their documented scope are not forced through duplicate assessment unless a material trigger changes.
+- Positive lifecycle decisions are blocked until Required evidence and triggered specialist reviews are complete.
+- A Pilot remains a Controlled Pilot; it is not displayed as production approval.
+
+USER START
+1. Extract the ZIP fully.
+2. Open the extracted folder.
+3. Double-click RUN_BUV_AI_DASHBOARD.bat.
+4. Keep the black startup window open while using the dashboard.
+
+WINDOWS RUNTIME
+No Administrator rights are required. The launcher first uses a portable Python runtime if present, then a compatible installed Python. If neither exists, first start downloads the official CPython 3.13.15 embeddable Windows runtime from python.org, verifies the fixed SHA-256 value and extracts it locally. Therefore this standard release is one-click/no-admin but is not guaranteed to be fully offline on a PC without Python.
+
+GOVERNANCE STATUS
+The bundled BUV AI Usage Guideline v3.0 and BUV ICT AI Technology Use Policy 2026 are final drafts pending formal BUV approval. The software is live-ready decision support; it does not make draft documents approved policy and does not replace authorised BUV decision-makers.
+
+DEPLOYMENT SCOPE
+This package is designed for one local user/copy at a time. A future institution-wide multi-user service should use managed authentication and roles, a central database, concurrency controls, managed backup/recovery and institutional monitoring.
+
+SOLUTION DESIGN / BUILD / DEPLOYMENT / IMPLEMENTATION
+Omar
+
+RELEASE VERIFICATION
+The release candidate was independently extracted and re-tested before final packaging. Archive integrity, application self-test, JavaScript syntax, immutable-file checksums, Windows bootstrap encoding/line endings and clean-baseline checks all passed. The final ZIP is subjected to the same verification gate after this release record is included.

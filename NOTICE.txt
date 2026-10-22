@@ -1,0 +1,7 @@
+BUV AI Evaluation Dashboard v2.0.0
+Copyright 2026. Internal BUV evaluation/governance solution.
+Solution design/build/deployment/implementation: Omar.
+
+This package is intended for authorised BUV internal use and evaluation. It is not presented as open-source software and does not grant rights to redistribute BUV branding, internal governance material or institutional records outside authorised BUV channels.
+
+The software provides decision support. It is not legal advice, does not make statutory classifications, and does not replace delegated BUV authority.

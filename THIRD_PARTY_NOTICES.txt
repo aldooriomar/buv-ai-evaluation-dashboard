@@ -1,0 +1,8 @@
+THIRD-PARTY NOTICES
+
+Python
+The Windows launcher may download the official CPython 3.13.15 embeddable runtime from python.org if no compatible runtime is present. Python is distributed under the Python Software Foundation licence. The official runtime package includes its applicable licence text.
+Source: https://www.python.org/
+
+Standards and external references
+ISO/IEC and IEEE standards are referenced by identifier for governance mapping. Standards text is not redistributed by this software. NIST, university and EDUCAUSE materials are used only as public benchmarking references in the design documentation.
