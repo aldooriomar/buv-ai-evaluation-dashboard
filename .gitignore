@@ -1,0 +1,27 @@
+﻿# Python generated files
+__pycache__/
+*.pyc
+*.pyo
+
+# Runtime logs
+logs/audit.jsonl
+logs/system.log
+*.log
+
+# Evaluation backups
+data/backups/*
+!data/backups/README.txt
+
+# Temporary and lock files
+*.tmp
+*.bak
+*.lock
+
+# Windows / macOS metadata
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor metadata
+.vscode/
+.idea/
